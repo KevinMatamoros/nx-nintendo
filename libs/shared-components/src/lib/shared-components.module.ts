@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HeaderComponent } from './presentational/header/header.component';
+import { HeaderComponent } from './presentational';
 
 @NgModule({
   imports: [CommonModule],

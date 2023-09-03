@@ -15,7 +15,15 @@
         "main": "apps/landing/src/main.ts",
         "polyfills": ["zone.js"],
         "tsConfig": "apps/landing/tsconfig.app.json",
-        "assets": ["apps/landing/src/favicon.ico", "apps/landing/src/assets"],
+        "assets": [
+          "apps/landing/src/favicon.ico",
+          "apps/landing/src/assets",
+          {
+            "input": "libs/shared-components/src/assets/header",
+            "glob": "**/*",
+            "output": "assets/header"
+          } 
+      ],
         "styles": ["apps/landing/src/styles.scss"],
         "scripts": []
       },
