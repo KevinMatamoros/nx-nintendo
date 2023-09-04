@@ -17,7 +17,12 @@
         "tsConfig": "apps/wish-list/tsconfig.app.json",
         "assets": [
           "apps/wish-list/src/favicon.ico",
-          "apps/wish-list/src/assets"
+          "apps/wish-list/src/assets",
+          {
+            "input": "libs/shared-components/src/assets/header",
+            "glob": "**/*",
+            "output": "assets/header"
+          } 
         ],
         "styles": ["apps/wish-list/src/styles.scss"],
         "scripts": []
@@ -56,7 +61,8 @@
           "browserTarget": "wish-list:build:production"
         },
         "development": {
-          "browserTarget": "wish-list:build:development"
+          "browserTarget": "wish-list:build:development",
+          "port": 4300
         }
       },
       "defaultConfiguration": "development"

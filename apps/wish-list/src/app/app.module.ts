@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { SharedComponentsModule } from '@nintendo/shared-components';
 import { SharedStoreModule } from '@nintendo/shared-store';
 
 @NgModule({
@@ -10,6 +11,7 @@ import { SharedStoreModule } from '@nintendo/shared-store';
   imports: [
     CommonModule,
     BrowserModule,
+    SharedComponentsModule,
     RouterModule,
     SharedStoreModule,
   ],

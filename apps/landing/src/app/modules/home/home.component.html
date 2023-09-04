@@ -15,7 +15,7 @@
 </div> -->
 <div class="max-w-7xl m-auto">
     <div class="mx-7 flex flex-wrap gap-y-6 justify-around">
-        <div *ngFor="let game of mockGames">
+        <div *ngFor="let game of games$ | async">
             <nintendo-game-card [game]="game"></nintendo-game-card>
         </div>
     </div>
