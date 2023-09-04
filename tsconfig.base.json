@@ -15,8 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@lib": ["libs"],
-      "@nintendo/shared-components": ["libs/shared-components/src/index.ts"]
+      "@nintendo/shared-components": ["libs/shared-components/src/index.ts"],
+      "@nintendo/shared-components-models": ["libs/shared-components/src/lib/models/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

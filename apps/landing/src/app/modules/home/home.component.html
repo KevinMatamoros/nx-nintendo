@@ -1,0 +1,22 @@
+<div class="bg-switch-red mb-12">
+    <div class="flex flex-col lg:flex-row max-w-7xl m-auto">
+        <div class="self-center text-slate-50 p-8 bg-[#00000099] rounded m-5 lg:m-0">
+            <h1 class="text-4xl font-bold mb-4">Juegos para Nintendo Switch</h1>
+            <h5 class="text-base">Descubre una amplia gama de juegos para la familia de consolas Nintendo Switch™, incluidos los últimos lanzamientos, clásicos y títulos multijugador.</h5>
+        </div>
+        <div class="">
+            <img src="/assets/landing_w1.avif" alt="Wallpaper" loading="lazy">
+        </div>
+    </div>
+</div>
+
+<!-- <div *ngFor="let game of mockGames">
+    <nintendo-game-card [game]="game"></nintendo-game-card>
+</div> -->
+<div class="max-w-7xl m-auto">
+    <div class="mx-7 flex flex-wrap gap-y-6 justify-around">
+        <div *ngFor="let game of mockGames">
+            <nintendo-game-card [game]="game"></nintendo-game-card>
+        </div>
+    </div>
+</div>

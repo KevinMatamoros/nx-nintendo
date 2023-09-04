@@ -26,6 +26,7 @@
       "options": {
         "lintFilePatterns": [
           "libs/shared-components/**/*.ts",
+          "libs/shared-components/**/*.ts",
           "libs/shared-components/**/*.html"
         ]
       }
