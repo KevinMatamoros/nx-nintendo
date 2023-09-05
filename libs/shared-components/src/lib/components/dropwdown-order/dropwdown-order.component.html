@@ -1,0 +1,14 @@
+<div class="d-inline-block" ngbDropdown>
+	<button
+		type="button"
+		class="border-[#484848] text-[#484848] min-w-[120px] btn me-2"
+		id="dropdownManual"
+		ngbDropdownToggle
+	>
+		{{selectedValue ? selectedValue : 'Organizar'}}
+	</button>
+	<div ngbDropdownMenu aria-labelledby="dropdownManual">
+		<button (click)="selectOrderMethod('Ascendente')" ngbDropdownItem>Ascendente</button>
+		<button (click)="selectOrderMethod('Descendente')" ngbDropdownItem>Descendente</button>
+	</div>
+</div>

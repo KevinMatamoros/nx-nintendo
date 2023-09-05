@@ -16,6 +16,10 @@ export class WishListComponent implements OnInit {
   constructor(private store: Store<GamesFeature.GamesState>) {}
 
   ngOnInit() {
+    this.initSub();
+  }
+
+  initSub(): void {
     this.games$ = this.store.pipe(select(GamesSelectors.selectWishList));
   }
 

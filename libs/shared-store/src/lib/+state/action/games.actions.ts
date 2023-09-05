@@ -22,3 +22,8 @@ export const removeToWishList = createAction(
   '[Games] Remove Game Wish list Success',
   props<{ id: string }>()
 );
+
+export const setOrderGames = createAction(
+  '[Games] Order Game Selection',
+  props<{ order: string }>()
+);

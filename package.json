@@ -25,6 +25,7 @@
     "@nrwl/angular": "^16.7.4",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.0.1",
+    "lodash": "^4.17.21",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
@@ -48,6 +49,7 @@
     "@nx/workspace": "16.7.4",
     "@schematics/angular": "~16.2.0",
     "@types/jest": "^29.4.0",
+    "@types/lodash": "^4.14.197",
     "@types/node": "16.11.7",
     "@typescript-eslint/eslint-plugin": "^5.60.1",
     "@typescript-eslint/parser": "^5.60.1",

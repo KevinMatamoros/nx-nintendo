@@ -24,3 +24,8 @@ export const selectWishList = createSelector(
   selectGamesState,
   (state: GamesState) => state.wishList
 );
+
+export const selectOrderMethod = createSelector(
+  selectGamesState,
+  (state: GamesState) => state.orderMethod
+);

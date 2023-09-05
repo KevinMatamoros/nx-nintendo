@@ -1,4 +1,3 @@
-import { EntityAdapter, createEntityAdapter } from '@ngrx/entity';
 import { createReducer, on, Action } from '@ngrx/store';
 
 import * as GamesActions from '../action/games.actions';
@@ -9,6 +8,7 @@ export const GAMES_FEATURE_KEY = 'games';
 
 export interface GamesState {
   games: gameI[]; // which Games record has been selected
+  orderMethod: string;
   wishList: gameI[],
   loaded: boolean; // has the Games list been loaded
   error?: string | null; // last known error (if any)
@@ -20,6 +20,7 @@ export interface GamesPartialState {
 
 export const initialGamesState: GamesState = {
   games: [],
+  orderMethod: 'Ascendente',
   wishList: [],
   loaded: false,
 };
@@ -41,7 +42,8 @@ const reducer = createReducer(
   ),
   on(GamesActions.loadGamesFailure, (state, { error }) => ({ ...state, error })),
   on(GamesActions.addToWishList, (state, { game }) => ({ ...state, wishList: [...state.wishList, game] })),
-  on(GamesActions.removeToWishList, (state, { id }) => ({ ...state, wishList: [...state.wishList.filter((game: gameI) => game.id !== id)] }))
+  on(GamesActions.removeToWishList, (state, { id }) => ({ ...state, wishList: [...state.wishList.filter((game: gameI) => game.id !== id)] })),
+  on(GamesActions.setOrderGames, (state, { order }) => ({ ...state, orderMethod: order }))
 );
 
 export function gamesReducer(state: GamesState | undefined, action: Action) {
