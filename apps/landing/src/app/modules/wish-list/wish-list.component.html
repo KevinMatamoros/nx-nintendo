@@ -1,11 +1,23 @@
-<div class="flex px-5 flex-col justify-center max-w-6xl lg:mx-auto ">
-    <header class="pt-5">
-        <h1 class="text-4xl font-bold mb-2">Lista de deseos</h1>
-        <p class="text-base mt-5 max-w-3xl text-[#484848]">Explora, adquiere o remueve artículos de tu lista de deseos aquí. También puedes compartir tu lista con tu familia y tus amigos.</p>
-    </header>
-    <div class="mt-12">
-        <ng-container  *ngFor="let game of games$ | async">
-            <nintendo-game-list [game]="game" [actionSelection]="removeGameWishList"></nintendo-game-list>
-        </ng-container>
+<ng-container *ngIf="(games$ | async) as games">
+    <div class="flex px-5 flex-col justify-center max-w-6xl lg:mx-auto">
+        <header class="pt-5 mb-12">
+            <h1 class="text-4xl font-bold mb-2">Lista de deseos</h1>
+            <p class="text-base mt-5 max-w-3xl text-[#484848]">Explora, adquiere o remueve artículos de tu lista de deseos aquí. También puedes compartir tu lista con tu familia y tus amigos.</p>
+        </header>
+        <div >
+    
+            <ng-container *ngIf="games">
+                <ng-container  *ngFor="let game of games">
+                    <nintendo-game-list [game]="game" [actionSelection]="removeGameWishList"></nintendo-game-list>
+                </ng-container>
+            </ng-container>
+        </div>
     </div>
-</div>
+    
+    <div class="w-[100vw] bg-[#EFEFEF]" *ngIf="!games.length">
+        <div class="flex px-5 py-12 justify-center max-w-6xl lg:mx-auto">
+            <h1 class="text-3xl font-bold">Aún no has agregado nada a tu lista deseos.</h1>
+        </div>
+    </div>
+</ng-container>
+
