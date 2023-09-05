@@ -11,7 +11,7 @@ export class GamesEffects {
   init$ = createEffect(() =>
     this.actions$.pipe(
       ofType(GamesActions.initGames),
-      switchMap(() => of(GamesActions.loadGamesSuccess({ games: generateMock(20) }))),
+      switchMap(() => of(GamesActions.loadGamesSuccess({ games: generateMock(100) }))),
       catchError((error) => {
         console.error('Error', error);
         return of(GamesActions.loadGamesFailure({ error }));

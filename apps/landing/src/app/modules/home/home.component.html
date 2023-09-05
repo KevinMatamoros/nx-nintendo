@@ -15,8 +15,10 @@
         <nintendo-dropwdown-order [selectedValue]="orderMethod$ | async" [triggerAction]="selectOrderMethod"></nintendo-dropwdown-order>
     </div>
     <div class="mx-7 flex flex-wrap gap-y-6 justify-around">
-        <div *ngFor="let game of games$ | async | orderBy: (orderMethod$ | async) ">
-            <nintendo-game-card [game]="game" [actionSelection]="addGameWishList"></nintendo-game-card>
-        </div>
+        <cdk-virtual-scroll-viewport itemSize="20" class="h-[400px] w-full cdk-custom-classes">
+            <div *cdkVirtualFor="let game of games$ | async | orderBy: (orderMethod$ | async) ">
+                <nintendo-game-card [game]="game" [actionSelection]="addGameWishList"></nintendo-game-card>
+            </div>
+        </cdk-virtual-scroll-viewport>
     </div>
 </div>
