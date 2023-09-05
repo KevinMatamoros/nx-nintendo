@@ -10,5 +10,4 @@ import { SharedComponentsModule } from '@nintendo/shared-components';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'landing';
 }

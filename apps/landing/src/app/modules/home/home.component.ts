@@ -20,5 +20,9 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(GamesActions.initGames());
     this.games$ = this.store.pipe(select(GamesSelectors.selectGames));
   }
+
+  addGameWishList = (game: gameI) => {
+    this.store.dispatch(GamesActions.addToWishList({game}));
+  }
   
 }

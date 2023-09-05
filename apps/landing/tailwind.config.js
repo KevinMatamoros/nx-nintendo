@@ -11,6 +11,9 @@ module.exports = {
     extend: {
       colors: {
         'switch-red': '#e60013'
+      },
+      fontFamily: {
+        'sans-default': ['museo-sans', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
       }
     },
   },

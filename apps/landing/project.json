@@ -22,9 +22,17 @@
             "input": "libs/shared-components/src/assets/header",
             "glob": "**/*",
             "output": "assets/header"
+          } ,
+          {
+            "input": "libs/shared-components/src/assets/icons",
+            "glob": "**/*",
+            "output": "assets/icons"
           } 
       ],
-        "styles": ["apps/landing/src/styles.scss"],
+        "styles": [
+          "node_modules/bootstrap/dist/css/bootstrap.css",
+          "apps/landing/src/styles.scss"
+        ],
         "scripts": []
       },
       "configurations": {

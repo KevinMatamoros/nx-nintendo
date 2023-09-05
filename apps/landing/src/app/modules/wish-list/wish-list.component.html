@@ -1,0 +1,11 @@
+<div class="flex px-5 flex-col justify-center max-w-6xl lg:mx-auto ">
+    <header class="pt-5">
+        <h1 class="text-4xl font-bold mb-2">Lista de deseos</h1>
+        <p class="text-base mt-5 max-w-3xl text-[#484848]">Explora, adquiere o remueve artículos de tu lista de deseos aquí. También puedes compartir tu lista con tu familia y tus amigos.</p>
+    </header>
+    <div class="mt-12">
+        <ng-container  *ngFor="let game of games$ | async">
+            <nintendo-game-list [game]="game" [actionSelection]="removeGameWishList"></nintendo-game-list>
+        </ng-container>
+    </div>
+</div>
