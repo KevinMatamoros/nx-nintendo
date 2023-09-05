@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { GAMES_FEATURE_KEY, GamesState, gamesAdapter } from '../reducers/games.reducer';
+import { GAMES_FEATURE_KEY, GamesState } from '../reducers/games.reducer';
 
 // Lookup the 'Games' feature state managed by NgRx
 export const selectGamesState =
@@ -18,4 +18,9 @@ export const selectGamesError = createSelector(
 export const selectGames = createSelector(
   selectGamesState,
   (state: GamesState) => state.games
+);
+
+export const selectWishList = createSelector(
+  selectGamesState,
+  (state: GamesState) => state.wishList
 );

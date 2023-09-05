@@ -1,13 +1,16 @@
 import { gameI } from "@nintendo/shared-components-models";
 
-export const gameMock: gameI = 
-    {
-        image: 'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_2.0/c_scale,w_200/ncom/software/switch/70070000014505/806672da8ad9d463d1f9b5bb1b6ac4afb04cdf2e0b60c46902fbde4afb565839',
-        name: 'Paquete doble de Pokémon™ Scarlet y Pokémon™ Violet',
-        date: '18/11/22',
-        price: 2798,
-        platform: 'Nintendo Switch'
+export const generateMock = (length: number): gameI[] => {
+    const games: gameI[] = [];
+    for (let index = 0; index < length; index++) {
+        games.push({
+            id: self.crypto.randomUUID(),
+            image: 'https://assets.nintendo.com/image/upload/ar_16:9,b_auto:border,c_lpad/b_white/f_auto/q_auto/dpr_2.0/c_scale,w_300/ncom/software/switch/70010000053971/842b2784d91520d41a947dec17fac116fec889bb1f1db4023615af8429dae00d',
+            name: `Pokémon™ Violet - ${index}`,
+            date: '18/11/22',
+            price: 2798,
+            platform: 'Nintendo Switch'
+        },);
     }
-;
-const rowGames: gameI[] = [gameMock, gameMock, gameMock, gameMock];
-export const gamesMock = [...rowGames, ...rowGames, ...rowGames,];
+    return games;
+}

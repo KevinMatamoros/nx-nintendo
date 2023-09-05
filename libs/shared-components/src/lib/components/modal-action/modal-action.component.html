@@ -1,0 +1,10 @@
+<div class="modal-header" *ngIf="title">
+    <h4 class="modal-title">{{title}}</h4>
+</div>
+<div class="modal-body">
+    <p [innerHTML]="content"></p>
+</div>
+<div class="modal-footer" *ngIf="actionTrigger">
+    <button type="button" class="btn btn-outline-dark" (click)="triggerAction()">Aceptar</button>
+    <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cancelar</button>
+</div>

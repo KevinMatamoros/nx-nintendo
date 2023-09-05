@@ -8,7 +8,8 @@ import { gameI } from '@nintendo/shared-components-models';
 export const GAMES_FEATURE_KEY = 'games';
 
 export interface GamesState {
-  games?: gameI[]; // which Games record has been selected
+  games: gameI[]; // which Games record has been selected
+  wishList: gameI[],
   loaded: boolean; // has the Games list been loaded
   error?: string | null; // last known error (if any)
 }
@@ -17,11 +18,9 @@ export interface GamesPartialState {
   readonly [GAMES_FEATURE_KEY]: GamesState;
 }
 
-export const gamesAdapter: EntityAdapter<gameI> =
-  createEntityAdapter<gameI>();
-
 export const initialGamesState: GamesState = {
   games: [],
+  wishList: [],
   loaded: false,
 };
 
@@ -40,7 +39,9 @@ const reducer = createReducer(
       error: null,
     })
   ),
-  on(GamesActions.loadGamesFailure, (state, { error }) => ({ ...state, error }))
+  on(GamesActions.loadGamesFailure, (state, { error }) => ({ ...state, error })),
+  on(GamesActions.addToWishList, (state, { game }) => ({ ...state, wishList: [...state.wishList, game] })),
+  on(GamesActions.removeToWishList, (state, { id }) => ({ ...state, wishList: [...state.wishList.filter((game: gameI) => game.id !== id)] }))
 );
 
 export function gamesReducer(state: GamesState | undefined, action: Action) {

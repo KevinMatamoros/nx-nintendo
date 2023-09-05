@@ -1,0 +1,15 @@
+<div class="flex flex-col md:flex-row py-4 border-b-2 gap-x-4">
+    <img class="max-w-[152px] max-h-[152px] border p-1" [src]="game.image" [alt]="game.name">
+    <div class="self-center">
+        <h1 class="text-base font-bold hover:text-switch-red">{{game.name}}</h1>
+        <h6 class="text-xs">{{game.date}}</h6>
+    </div>
+    <div class="py-4 lg:m-auto md:flex md:gap-3">
+        <div class="flex pb-4 self-center">
+            <h1 class="text-base font-bold">{{game.price | currency}}</h1>
+            <img class="ml-auto md:hidden max-w-[23px]" src="/assets/icons/heart.svg" alt="Remover de lista" (click)="removeGameWishList(game)">
+        </div>
+        <button class="w-full rounded p-4 text-white bg-switch-red mb-4" (click)="getDigitalVersion(game)">Adquirir la versión digital</button>
+        <img class="hidden md:block max-w-[23px] relative bottom-1" src="/assets/icons/heart.svg" alt="Remover de lista" (click)="removeGameWishList(game)">
+    </div>
+</div>
